@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body">
+    <section class="welcome">
+      <h1>Войти в HR-link</h1>
+      <div class="login">
+        <img
+          class="login__img"
+          src="assets/welcome.png"
+          ait="Добро пожаловать в HR-link"
+        />
+        <form action="submit" class="login-form">
+          <div class="login-form__line">
+            <label for="username" class="login-form__label secondary__text"
+              >Email/Телефон/WhatsApp</label
+            >
+            <input
+              type="text"
+              placeholder="Введите Email/Телефон/WhatsApp"
+              id="username"
+              class="login-form__input"
+            />
+          </div>
+
+          <div class="login-form__line">
+            <a href="/" class="login-form__link">Не знаете пароль?</a>
+            <label for="password" class="login-form__label secondary__text"
+              >Пароль</label
+            >
+            <div class="login-form__password">
+              <input
+                type="password"
+                placeholder="Введите пароль"
+                id="password"
+                class="login-form__input"
+              />
+              <button id="eye-btn" class="login-form__eye-btn"></button>
+            </div>
+          </div>
+
+          <button class="login-form__enter-btn">Войти</button>
+        </form>
+      </div>
+
+      <span class="welcome__copyright secondary__text"
+        >Copyright © HR-Link 2023</span
+      >
+    </section>
+  </body>
+
+  <script>
+    const password = document.getElementById("password");
+    const eyeBtn = document.getElementById("eye-btn");
+
+    const togglePassword = (event) => {
+      event.preventDefault();
+
+      password.type = password.type === "password" ? "text" : "password";
+    };
+
+    eyeBtn.addEventListener("click", togglePassword);
+  </script>
+</html>
